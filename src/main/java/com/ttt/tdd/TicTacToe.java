@@ -11,8 +11,8 @@ public class TicTacToe {
 
 		checkAxis(column, "X value is outside the board!");
 		checkAxis(row, "Y value is outside the board!");
-		setField(column, row, "Field is occupied!");
 		lastPlayer = nextPlayer();
+		setField(column, row, "Field is occupied!");
 		return checkWin();
 	}
 
@@ -38,7 +38,7 @@ public class TicTacToe {
 		if (board[column - 1][row - 1] != '\0') {
 			throw new TicTacToeException(msg);
 		} else {
-			board[column - 1][row - 1] = 'X';
+			board[column - 1][row - 1] = lastPlayer;
 		}
 	}
 
