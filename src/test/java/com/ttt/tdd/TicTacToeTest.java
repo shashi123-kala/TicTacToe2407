@@ -15,6 +15,7 @@ public class TicTacToeTest {
 
 	TicTacToe ticTacToe = new TicTacToe();
 	public static final Character FIRST_PLAYER = 'X';
+	public static final Character SECOND_PLAYER = 'Y';
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 
@@ -43,7 +44,7 @@ public class TicTacToeTest {
 	@Test
     public void givenLastTurnWasXWhenNextPlayerThenO() {
         ticTacToe.play(1,1);
-        assertEquals('O', ticTacToe.nextPlayer());
+        assertEquals(SECOND_PLAYER, ticTacToe.nextPlayer());
     }
 
 
