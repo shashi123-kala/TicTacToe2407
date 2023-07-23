@@ -16,6 +16,8 @@ public class TicTacToeTest {
 	TicTacToe ticTacToe = new TicTacToe();
 	public static final Character FIRST_PLAYER = 'X';
 	public static final Character SECOND_PLAYER = 'Y';
+	public static final String ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD = "X value is outside the board!";
+
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 
@@ -50,7 +52,7 @@ public class TicTacToeTest {
 	@Test
 	public void whenXValueIsOutSideTheBoard() {
 	    Exception exception = assertThrows(TicTacToeException.class, () -> {ticTacToe.play(5, 2); });
-	    String expectedMessage = "X value is outside the board";
+	    String expectedMessage = ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD;
 	    String actualMessage = exception.getMessage();
 	    assertTrue(actualMessage.contains(expectedMessage));
 	}
