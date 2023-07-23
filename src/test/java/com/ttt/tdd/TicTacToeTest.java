@@ -14,6 +14,7 @@ import com.ttt.exceptions.TicTacToeException;
 public class TicTacToeTest {
 
 	TicTacToe ticTacToe = new TicTacToe();
+	public static final Character FIRST_PLAYER = 'X';
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 
@@ -33,10 +34,10 @@ public class TicTacToeTest {
 		String actualMessage = exception.getMessage();
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
-	
+
 	@Test
-	public void playWithFIrstPlayer () {
-		assertEquals('X', ticTacToe.nextPlayer());
+	public void playWithFIrstPlayer() {
+		assertEquals(FIRST_PLAYER, ticTacToe.nextPlayer());
 	}
 
 }
