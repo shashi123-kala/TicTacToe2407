@@ -9,6 +9,10 @@ public class TicTacToe {
 
 
 	public void play(int column, int row) {
+		
+		if (column < 1 || column > 3) {
+			throw new TicTacToeException("X value is outside the board!");
+		}
 
 		if (board[column - 1][row - 1] != '\0') {
 			throw new TicTacToeException("Field is occupied!");
